@@ -922,7 +922,7 @@ button{font: inherit; cursor: pointer}
 }
 .form-success svg{ opacity: .85; }
 .form-success h3{
-  font-family: var(--serif);
+  font-family: "Instrument Serif", serif;
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   font-weight: 400;
   margin: 0;
