@@ -19,6 +19,33 @@ const io = new IntersectionObserver(
 );
 revealEls.forEach((el) => io.observe(el));
 
+// Mobile nav toggle
+const navToggle = document.getElementById("navToggle");
+const siteNav = document.getElementById("siteNav");
+if (navToggle && siteNav) {
+  navToggle.addEventListener("click", () => {
+    const open = siteNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open);
+    navToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  });
+  // Close nav when a link is clicked
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+    });
+  });
+  // Close nav on outside click
+  document.addEventListener("click", (e) => {
+    if (!siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+      siteNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+    }
+  });
+}
+
 // Single-open accordion behaviour (FAQ)
 const faqs = document.querySelectorAll(".faq-item");
 faqs.forEach((item) => {
