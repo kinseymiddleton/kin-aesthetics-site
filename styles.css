@@ -999,7 +999,7 @@ button{font: inherit; cursor: pointer}
 .bot-field{ display: none !important; }
 
 .form-success{
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1007,6 +1007,9 @@ button{font: inherit; cursor: pointer}
   text-align: center;
   padding: 48px 24px;
   color: #fff;
+}
+.form-success:not([hidden]){
+  display: flex;
 }
 .form-success svg{ opacity: .85; }
 .form-success h3{
@@ -1166,7 +1169,10 @@ button{font: inherit; cursor: pointer}
   .hero-ctas{ flex-direction: column; }
   .hero-ctas .btn{ width: 100%; justify-content: center; }
 
-  /* Contact form: stack first/last name */
+  /* Contact: reduce nested padding so inputs have room */
+  .contact-card{ padding: 20px; gap: 24px; }
+  .contact-form{ padding: 18px; gap: 12px; }
+  .contact-meta{ margin-top: 24px; gap: 14px; padding-top: 20px; }
   .contact-form .row.two{ grid-template-columns: 1fr; }
 
   /* Contact meta email */
