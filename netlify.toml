@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[[plugins]]
+
+[forms]
+  # Netlify Forms spam filtering is enabled by default.
+  # The honeypot field "bot-field" provides an additional layer.
+
+# Email notifications for form submissions are configured in the
+# Netlify dashboard: Site > Forms > inquiry > Form notifications.
+# Add an email notification to: kinseymmiddleton@gmail.com
