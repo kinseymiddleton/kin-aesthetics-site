@@ -90,8 +90,11 @@ if (form) {
       });
 
       if (res.ok) {
-        form.hidden = true;
-        formSuccess.hidden = false;
+        submitBtn.textContent = "Sent";
+        setTimeout(() => {
+          form.hidden = true;
+          formSuccess.hidden = false;
+        }, 700);
       } else {
         throw new Error(res.status);
       }
@@ -99,7 +102,7 @@ if (form) {
       note.textContent = "Something went wrong — please email us directly at kinaestheticmarketing@gmail.com.";
       note.style.color = "#B45A3C";
       submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Submit inquiry <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      submitBtn.innerHTML = 'Send <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     }
   });
 }
