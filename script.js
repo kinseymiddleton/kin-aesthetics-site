@@ -90,6 +90,9 @@ if (form) {
       });
 
       if (res.ok) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { form_name: 'contact_form' });
+        }
         submitBtn.textContent = "Sent";
         setTimeout(() => {
           form.hidden = true;
