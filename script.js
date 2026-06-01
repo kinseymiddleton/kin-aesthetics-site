@@ -102,7 +102,7 @@ if (form) {
         throw new Error(res.status);
       }
     } catch {
-      note.textContent = "Something went wrong — please email us directly at kinaestheticmarketing@gmail.com.";
+      note.textContent = "Something went wrong — please try again or reach us on LinkedIn.";
       note.style.color = "#B45A3C";
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Send <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
